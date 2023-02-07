@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Try-Velus</title>
+        <meta charset="UTF-8"/>
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+        <link rel="stylesheet" href="style.css"/>
+        <script src="ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+    </head>
+    <body>
+      <nav class="navbar">
+        <ul>
+          <li><button>File</button>
+            <ul id="examples">
+              <li><button id="clear-button">Clear</button></li>
+            </ul>
+          </li>
+          <li>
+            <button>Targets</button>
+            <ul>
+              <li><button id="lustre-button">+Elaborate</button></li>
+              <li><button id="nolast-button">+No Last</button></li>
+              <li><button id="noauto-button">+No Automaton</button></li>
+              <li><button id="noswitch-button">+No Switch</button></li>
+              <li><button id="nolocal-button">+No Locals</button></li>
+              <li><button id="nlustre-button">+NLustre</button></li>
+              <li><button id="stc-button">+Stc</button></li>
+              <li><button id="obc-button">+Obc</button></li>
+              <li><button id="clight-button">+Clight</button></li>
+              <li><button id="interp-button">+Interpreter</button></li>
+            </ul>
+          </li>
+          <!-- <li><button id="compile-button">Compile</button></li> -->
+        </ul>
+      </nav>
+      <div id="body"></div>
+      <ul id="console"></ul>
+      <script>
+        process = [];
+        process.env = [];
+        process.env["COMPCERT_CONFIG"] = "compcert.ini";
+      </script>
+      <script src="tryvelus.js"></script>
+    </body>
+</html>
