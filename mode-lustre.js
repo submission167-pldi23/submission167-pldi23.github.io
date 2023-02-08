@@ -30,6 +30,10 @@ ace.define("ace/mode/lustre_highlight_rules",["require","exports","module","ace/
                 token : "comment",
                 regex : "--.*$"
             }, {
+                token : "comment", // multi line comment
+                regex : "\\(\\*",
+                next : "comment"
+            }, {
                 token : "string",           // " string
                 regex : '".*?"'
             }, {
@@ -53,7 +57,16 @@ ace.define("ace/mode/lustre_highlight_rules",["require","exports","module","ace/
             }, {
                 token : "text",
                 regex : "\\s+"
-            } ]
+            } ],
+            "comment" : [
+                {
+                    token : "comment", // closing comment
+                    regex : "\\*\\)",
+                    next : "start"
+                }, {
+                    defaultToken : "comment"
+                }
+            ],
         };
     };
 
